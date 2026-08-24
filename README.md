@@ -6,6 +6,16 @@ Homebrew tap for [@abhijit424515](https://github.com/abhijit424515)'s apps.
 brew tap abhijit424515/dynamight
 ```
 
+## Formulae
+
+| Formula | What it is |
+| --- | --- |
+| [`logctl`](https://github.com/abhijit424515/logctl) | Profile wrapper over `logcli`, driven by `~/logctl.toml`. Installs as `logctl` and `lc`. |
+
+```sh
+brew install abhijit424515/dynamight/logctl
+```
+
 ## Casks
 
 | Cask | What it is |
