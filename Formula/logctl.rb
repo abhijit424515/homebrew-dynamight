@@ -1,11 +1,13 @@
 class Logctl < Formula
   desc "Profile wrapper over logcli, driven by ~/logctl.toml"
   homepage "https://github.com/abhijit424515/logctl"
-  url "https://github.com/abhijit424515/logctl/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "ce5a4f4ab25c7a391b72534a23c3f9db4d248bde7263434ec81064727a9c4997"
+  url "https://github.com/abhijit424515/logctl/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "8ba0ff367317d54c9637fa14c123db0c550c681ba0b835012acebb58aa82ee66"
   license "MIT"
 
+  depends_on "jq"
   depends_on "logcli"
+  depends_on "yq"
 
   def install
     bin.install "logctl"
@@ -29,6 +31,6 @@ class Logctl < Formula
     TOML
     ENV["LOGCTL_CONFIG"] = testpath/"c.toml"
     assert_equal "dev", shell_output("#{bin}/logctl profiles").strip
-    assert_match "LOKI_ADDR=http://localhost:3100", shell_output("#{bin}/lc env")
+    assert_match "LOKI_ADDR='http://localhost:3100'", shell_output("#{bin}/lc env")
   end
 end
